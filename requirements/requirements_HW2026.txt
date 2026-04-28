@@ -6,3 +6,12 @@ jupyter>=1.0
 schemdraw>=0.18
 scikit-learn>=1.3
 astroquery>=0.4
+
+# Final project (2026) — added for the machine-learning topic menu
+astropy>=6.0           # Topic 1: FITS I/O, WCS, SkyCoord
+photutils>=1.13        # Topic 1: star detection + aperture photometry
+statsmodels>=0.14      # Topic 3: seasonal_decompose + datasets.co2
+libcomcat-python>=2.0  # Topic 2: USGS earthquake catalog client
+# cartopy needs libgeos/libproj at the OS level; .devcontainer/devcontainer.json
+# installs these via apt before pip. Colab already ships them.
+cartopy>=0.22          # Topic 2: world maps with decision-region overlays
