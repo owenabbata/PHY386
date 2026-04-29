@@ -1,0 +1,99 @@
+name: Final Project Topic Claim
+description: Claim your final-project topic and track your progress
+title: "Final - [Topic N] - @yourusername"
+labels: ["Final-2026"]
+assignees:
+  - yourusername
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Track Your Final Project
+
+        Use this issue to track all your commits, PR, and progress for the final project.
+
+        **Before submitting:** Comment on the main topic-selection issue to reserve your topic — see the pinned issue tagged `Final-2026`. Topics are first-come-first-served, **max 1 student per topic**.
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Which final-project topic are you doing?
+      options:
+        - "Topic 1 — Seestar Star-Color Classification"
+        - "Topic 2 — Ring of Fire from Earthquake Data"
+        - "Topic 3 — Atmospheric Methane (CH₄) Forecast (regression stretch)"
+        - "Topic 4 — Exoplanet Confirmation Classifier"
+        - "Topic 5 — Gaia Variable-Star Classification"
+        - "Custom topic (cleared with instructor)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: research_question
+    attributes:
+      label: Research Question
+      description: One or two sentences. What physics question are you answering with machine learning?
+      placeholder: |
+        Example: Can a Random Forest trained on KOI transit features distinguish
+        confirmed Kepler exoplanets from false positives, and what are the most
+        informative features?
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Your Approach
+      description: Brief plan — data source, machine-learning method, expected deliverable plot.
+      placeholder: |
+        Example: Pull KOI cumulative table via astroquery, train Decision Tree /
+        Random Forest / Multi-Layer Perceptron, compare on accuracy + feature
+        importance, and apply best model to the CANDIDATE list.
+    validations:
+      required: false
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions or Challenges
+      description: Anything blocking you, or where you'd like instructor feedback?
+      placeholder: "Example: For Topic 3, how should I handle the 1999–2006 plateau? Piecewise fit or change-point model?"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: progress
+    attributes:
+      label: Progress Checklist
+      description: Check off tasks as you complete them
+      options:
+        - label: Topic claimed in the main selection issue
+        - label: Codespace opened on fork
+        - label: Feature branch created (`yourusername-final`)
+        - label: Data loaded (FITS file / astroquery / NOAA URL / libcomcat)
+        - label: Features engineered and cleaned
+        - label: Baseline model trained
+        - label: Model comparison or stretch goal completed
+        - label: Plots labeled with units, `figsize=(6, 4)`, 11pt fonts
+        - label: Functions have type annotations and NumPy docstrings
+        - label: Physics interpretation written
+        - label: All code cells execute without errors on a fresh kernel
+        - label: Pull request opened (fork → ubsuny/PHY386:Homework2026)
+        - label: PR template filled out (pull_request_template_Final.md)
+        - label: Reviewer assigned (@laserlab)
+        - label: Milestone set (Final-2026)
+        - label: AI usage disclosed in PR description
+
+  - type: textarea
+    id: commits
+    attributes:
+      label: Commit Log
+      description: Paste your commit messages here as you work.
+      placeholder: |
+        - `Load KOI table and inspect class balance`
+        - `Train Decision Tree and Random Forest baselines`
+        - `Add Multi-Layer Perceptron and feature-importance plot`
+        - `Apply classifier to CANDIDATE list, rank top-20`
+      render: markdown
+    validations:
+      required: false
